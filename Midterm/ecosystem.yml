@@ -1,0 +1,17 @@
+apps:
+  name     : 'node-api'
+  script   : ./index.js
+  instances: 0
+  exec_mode: cluster
+  autorestart: true
+  watch: true
+  restart_delay: 1000
+
+  env:
+    NODE_ENV: development
+    NODE_PORT: 3000
+
+  env_production:
+    NODE_ENV: production
+    NODE_PORT: 3000
+    STATS: true
